@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RstPad::MainWindow</class>
+ <widget class="QMainWindow" name="RstPad::MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>916</width>
+    <height>576</height>
+   </rect>
+  </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::NoContextMenu</enum>
+  </property>
+  <property name="windowTitle">
+   <string>RSTPad</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../resources/resources.qrc">
+    <normaloff>:/icons/main.png</normaloff>:/icons/main.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QStatusBar::item {
+    border: none;
+}
+QWebEngineView, QPlainTextEdit {
+	border: none;
+}
+</string>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>24</width>
+    <height>24</height>
+   </size>
+  </property>
+  <widget class="QWidget" name="CentralWidget">
+   <layout class="QHBoxLayout" name="layout" stretch="1,1">
+    <item>
+     <widget class="RstPad::CodeEdit" name="CodeEditor">
+      <property name="tabStopWidth">
+       <number>40</number>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="RstPad::PreviewView" name="Preview" native="true"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="MenuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>916</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="MenuFile">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="ActionNew"/>
+    <addaction name="ActionOpen"/>
+    <addaction name="ActionSave"/>
+    <addaction name="ActionSave_as"/>
+    <addaction name="ActionPDFExport"/>
+    <addaction name="separator"/>
+    <addaction name="ActionExit"/>
+   </widget>
+   <widget class="QMenu" name="MenuTools">
+    <property name="title">
+     <string>&amp;Tools</string>
+    </property>
+    <addaction name="ActionSettings"/>
+   </widget>
+   <widget class="QMenu" name="MenuHelp">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="ActionAbout_Qt"/>
+    <addaction name="separator"/>
+    <addaction name="ActionSyntaxHelp"/>
+    <addaction name="ActionAbout"/>
+   </widget>
+   <widget class="QMenu" name="MenuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <addaction name="ActionUndo"/>
+    <addaction name="ActionRedo"/>
+    <addaction name="separator"/>
+    <addaction name="ActionCut"/>
+    <addaction name="ActionCopy"/>
+    <addaction name="ActionPaste"/>
+    <addaction name="separator"/>
+    <addaction name="ActionSearchReplace"/>
+    <addaction name="ActionFindNext"/>
+    <addaction name="ActionFindPrev"/>
+    <addaction name="ActionGotoLine"/>
+   </widget>
+   <addaction name="MenuFile"/>
+   <addaction name="MenuEdit"/>
+   <addaction name="MenuTools"/>
+   <addaction name="MenuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="StatusBar">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="ToolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="ActionNew"/>
+   <addaction name="ActionOpen"/>
+   <addaction name="ActionSave"/>
+   <addaction name="separator"/>
+   <addaction name="ActionHeading1"/>
+   <addaction name="ActionHeading2"/>
+   <addaction name="ActionHeading3"/>
+   <addaction name="ActionHeading4"/>
+   <addaction name="ActionHeading5"/>
+   <addaction name="ActionHeading6"/>
+   <addaction name="separator"/>
+   <addaction name="ActionBold"/>
+   <addaction name="ActionItalic"/>
+   <addaction name="separator"/>
+   <addaction name="ActionInlineCode"/>
+   <addaction name="ActionCodeBlock"/>
+   <addaction name="ActionPygmentsCodeBlock"/>
+   <addaction name="ActionHorizontalRule"/>
+   <addaction name="separator"/>
+   <addaction name="ActionUL"/>
+   <addaction name="ActionOL"/>
+   <addaction name="separator"/>
+   <addaction name="ActionLink"/>
+   <addaction name="ActionImage"/>
+   <addaction name="separator"/>
+   <addaction name="ActionSyntaxHelp"/>
+  </widget>
+  <action name="ActionNew">
+   <property name="icon">
+    <iconset resource="../../resources/resources.qrc">
+     <normaloff>:/icons/page.png</normaloff>:/icons/page.png</iconset>
+   </property>
+   <property name="text">
+    <string>New</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="ActionOpen">
+   <property name="icon">
+    <iconset resource="../../resources/resources.qrc">
+     <normaloff>:/icons/folder.png</normaloff>:/icons/folder.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="ActionSave">
+   <property name="icon">
+    <iconset resource="../../resources/resources.qrc">
+     <normaloff>:/icons/floppy.png</normaloff>:/icons/floppy.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="ActionSave_as">
+   <property name="icon">
+    <iconset resource="../../resources/resources.qrc">
+     <normaloff>:/icons/floppy.png</normaloff>:/icons/floppy.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save as</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
+   </property>
+  </action>
+  <action name="ActionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="ActionSettings">
+   <property name="icon">
+    <iconset resource="../../resources/resources.qrc">
+     <normaloff>:/icons/wrench.png</normaloff>:/icons/wrench.png</iconset>
+   </property>
+   <property name="text">
+    <string>Settings</string>
+   </property>
+  </action>
+  <action name="ActionAbout">
+   <property name="icon">
+    <iconset resource="../../resources/resources.qrc">
+     <normaloff>:/icons/info.png</normaloff>:/icons/info.png</iconset>
+   </property>
+   <property name="text">
+    <string>About RSTPad</string>
+   </property>
+   <property name="toolTip">
+    <string>About RSTPad</string>
+   </property>
+  </action>
+  <action name="ActionAbout_Qt">
+   <property name="icon">
+    <iconset resource="../../resources/resources.qrc">
+     <normaloff>:/icons/qt.png</normaloff>:/icons/qt.png</iconset>
+   </property>
+   <property name="text">
+    <string>About Qt</string>
+   </property>
+  </action>
+  <action name="ActionHeading1">
+   <property name="icon">
+    <iconset resource="../../resources/resources.qrc">
+     <normaloff>:/icons/h1.png</normaloff>:/icons/h1.png</iconset>
+   </property>
+   <property name="text">
+    <string>H1</string>
+   </property>
+  </action>
+  <action name="ActionHeading2">
+   <property name="icon">
+    <iconset resource="../../resources/resources.qrc">
+     <normaloff>:/icons/h2.png</normaloff>:/icons/h2.png</iconset>
+   </property>
+   <property name="text">
+    <string>H2</string>
+   </property>
+  </action>
+  <action name="ActionHeading3">
+   <property name="icon">
+    <iconset resource="../../resources/resources.qrc">
+     <normaloff>:/icons/h3.png</normaloff>:/icons/h3.png</iconset>
+   </property>
+   <property name="text">
+    <string>H3</string>
+   </property>
+  </action>
+  <action name="ActionHeading4">
+   <property name="icon">
+    <iconset resource="../../resources/resources.qrc">
+     <normaloff>:/icons/h4.png</normaloff>:/icons/h4.png</iconset>
+   </property>
+   <property name="text">
+    <string>H4</string>
+   </property>
+  </action>
+  <action name="ActionHeading5">
+   <property name="icon">
+    <iconset resource="../../resources/resources.qrc">
+     <normaloff>:/icons/h5.png</normaloff>:/icons/h5.png</iconset>
+   </property>
+   <property name="text">
+    <string>H5</string>
+   </property>
+  </action>
+  <action name="ActionHeading6">
+   <property name="icon">
+    <iconset resource="../../resources/resources.qrc">
+     <normaloff>:/icons/h6.png</normaloff>:/icons/h6.png</iconset>
+   </property>
+   <property name="text">
+    <string>H6</string>
+   </property>
+  </action>
+  <action name="ActionBold">
+   <property name="icon">
+    <iconset resource="../../resources/resources.qrc">
+     <normaloff>:/icons/bold.png</normaloff>:/icons/bold.png</iconset>
+   </property>
+   <property name="text">
+    <string>Bold</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+B</string>
+   </property>
+  </action>
+  <action name="ActionItalic">
+   <property name="icon">
+    <iconset resource="../../resources/resources.qrc">
+     <normaloff>:/icons/italic.png</normaloff>:/icons/italic.png</iconset>
+   </property>
+   <property name="text">
+    <string>Italic</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
+  </action>
+  <action name="ActionUL">
+   <property name="icon">
+    <iconset resource="../../resources/resources.qrc">
+     <normaloff>:/icons/ul.png</normaloff>:/icons/ul.png</iconset>
+   </property>
+   <property name="text">
+    <string>Unordered List</string>
+   </property>
+  </action>
+  <action name="ActionOL">
+   <property name="icon">
+    <iconset resource="../../resources/resources.qrc">
+     <normaloff>:/icons/ol.png</normaloff>:/icons/ol.png</iconset>
+   </property>
+   <property name="text">
+    <string>Ordered List</string>
+   </property>
+  </action>
+  <action name="ActionLink">
+   <property name="icon">
+    <iconset resource="../../resources/resources.qrc">
+     <normaloff>:/icons/link.png</normaloff>:/icons/link.png</iconset>
+   </property>
+   <property name="text">
+    <string>Link</string>
+   </property>
+  </action>
+  <action name="ActionImage">
+   <property name="icon">
+    <iconset resource="../../resources/resources.qrc">
+     <normaloff>:/icons/image.png</normaloff>:/icons/image.png</iconset>
+   </property>
+   <property name="text">
+    <string>Image</string>
+   </property>
+  </action>
+  <action name="ActionSyntaxHelp">
+   <property name="icon">
+    <iconset resource="../../resources/resources.qrc">
+     <normaloff>:/icons/help.png</normaloff>:/icons/help.png</iconset>
+   </property>
+   <property name="text">
+    <string>Syntax help</string>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
+   </property>
+  </action>
+  <action name="ActionPDFExport">
+   <property name="icon">
+    <iconset resource="../../resources/resources.qrc">
+     <normaloff>:/icons/pdf.png</normaloff>:/icons/pdf.png</iconset>
+   </property>
+   <property name="text">
+    <string>Export to PDF</string>
+   </property>
+  </action>
+  <action name="ActionInlineCode">
+   <property name="icon">
+    <iconset resource="../../resources/resources.qrc">
+     <normaloff>:/icons/code.png</normaloff>:/icons/code.png</iconset>
+   </property>
+   <property name="text">
+    <string>Inline code</string>
+   </property>
+  </action>
+  <action name="ActionCodeBlock">
+   <property name="icon">
+    <iconset resource="../../resources/resources.qrc">
+     <normaloff>:/icons/code-block.png</normaloff>:/icons/code-block.png</iconset>
+   </property>
+   <property name="text">
+    <string>Code block</string>
+   </property>
+  </action>
+  <action name="ActionPygmentsCodeBlock">
+   <property name="icon">
+    <iconset resource="../../resources/resources.qrc">
+     <normaloff>:/icons/code-block-pygments.png</normaloff>:/icons/code-block-pygments.png</iconset>
+   </property>
+   <property name="text">
+    <string>Highlighted code block (Pygments)</string>
+   </property>
+  </action>
+  <action name="ActionHorizontalRule">
+   <property name="icon">
+    <iconset resource="../../resources/resources.qrc">
+     <normaloff>:/icons/hr.png</normaloff>:/icons/hr.png</iconset>
+   </property>
+   <property name="text">
+    <string>Horizontal rule</string>
+   </property>
+  </action>
+  <action name="ActionSearchReplace">
+   <property name="icon">
+    <iconset resource="../../resources/resources.qrc">
+     <normaloff>:/icons/find.png</normaloff>:/icons/find.png</iconset>
+   </property>
+   <property name="text">
+    <string>Search / replace</string>
+   </property>
+   <property name="toolTip">
+    <string>Find / Replace</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
+   </property>
+  </action>
+  <action name="ActionUndo">
+   <property name="icon">
+    <iconset resource="../../resources/resources.qrc">
+     <normaloff>:/icons/undo.png</normaloff>:/icons/undo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Undo</string>
+   </property>
+  </action>
+  <action name="ActionRedo">
+   <property name="icon">
+    <iconset resource="../../resources/resources.qrc">
+     <normaloff>:/icons/redo.png</normaloff>:/icons/redo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Redo</string>
+   </property>
+  </action>
+  <action name="ActionCut">
+   <property name="icon">
+    <iconset resource="../../resources/resources.qrc">
+     <normaloff>:/icons/cut.png</normaloff>:/icons/cut.png</iconset>
+   </property>
+   <property name="text">
+    <string>Cut</string>
+   </property>
+  </action>
+  <action name="ActionCopy">
+   <property name="icon">
+    <iconset resource="../../resources/resources.qrc">
+     <normaloff>:/icons/copy.png</normaloff>:/icons/copy.png</iconset>
+   </property>
+   <property name="text">
+    <string>Copy</string>
+   </property>
+  </action>
+  <action name="ActionPaste">
+   <property name="icon">
+    <iconset resource="../../resources/resources.qrc">
+     <normaloff>:/icons/paste.png</normaloff>:/icons/paste.png</iconset>
+   </property>
+   <property name="text">
+    <string>Paste</string>
+   </property>
+  </action>
+  <action name="ActionFindNext">
+   <property name="icon">
+    <iconset resource="../../resources/resources.qrc">
+     <normaloff>:/icons/find-next.png</normaloff>:/icons/find-next.png</iconset>
+   </property>
+   <property name="text">
+    <string>Find next</string>
+   </property>
+   <property name="shortcut">
+    <string>F3</string>
+   </property>
+  </action>
+  <action name="ActionFindPrev">
+   <property name="icon">
+    <iconset resource="../../resources/resources.qrc">
+     <normaloff>:/icons/find-prev.png</normaloff>:/icons/find-prev.png</iconset>
+   </property>
+   <property name="text">
+    <string>Find previous</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+F3</string>
+   </property>
+  </action>
+  <action name="ActionGotoLine">
+   <property name="icon">
+    <iconset resource="../../resources/resources.qrc">
+     <normaloff>:/icons/arrow-right.png</normaloff>:/icons/arrow-right.png</iconset>
+   </property>
+   <property name="text">
+    <string>Go to line</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+G</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>RstPad::CodeEdit</class>
+   <extends>QPlainTextEdit</extends>
+   <header>src/UI/Code/CodeEdit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>RstPad::PreviewView</class>
+   <extends>QWidget</extends>
+   <header>src/UI/PreviewView.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../../resources/resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

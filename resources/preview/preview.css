@@ -1,0 +1,39 @@
+/* Global */
+body {
+    margin: 0 !important;
+    padding: 1em !important;
+    font-family: sans-serif;
+}
+h1:first-child {
+    margin-top: 0 !important;               
+}               
+.document {
+    max-width: 950px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+blockquote {
+    border-left: 4px solid #d5d5d5;
+    padding-left: 14px;
+}
+
+/* RST renderer exception */
+.rst-exception {
+    margin: 40px;
+    border: medium outset;
+    padding-right: 1em;
+    padding-left: 1em;
+}
+.rst-exception pre {
+    overflow: auto;
+}
+.rst-exception-message {
+    white-space: pre-wrap;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: red;
+}
+.rst-exception-trace {
+    font-size: smaller;
+    color: gray;
+}

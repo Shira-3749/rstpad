@@ -1,0 +1,7 @@
+# Python
+PYTHON_LINK = 
+PYTHON_INCLUDE_PATH = 
+PYTHON_SYS_PATH = 
+
+# Web engine
+DEBUG_WEBENGINE_REMOTE_PORT = 0 # set to a non-zero value to enable remote web engine debugging at that port (for debug build only)
