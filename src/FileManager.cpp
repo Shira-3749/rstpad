@@ -32,12 +32,14 @@ namespace RstPad {
 
     bool FileManager::openFile(const QString &path)
     {
-        QFileInfo file(path);
+        if (ensureChangesNotLost()) {
+            QFileInfo file(path);
 
-        if (file.exists() && file.isReadable()) {
-            setFile(file);
+            if (file.exists() && file.isReadable()) {
+                setFile(file);
 
-            return true;
+                return true;
+            }
         }
 
         return false;
