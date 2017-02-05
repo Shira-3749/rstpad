@@ -24,7 +24,7 @@ namespace RstPad {
 
         private:
             bool frozen = false;
-            QOpenGLWidget *hostView;
+            QOpenGLWidget *hostView = nullptr;
             QPixmap *capture = nullptr;
     };
 
