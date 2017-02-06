@@ -3,7 +3,7 @@ RSTPad
 
 reStructuredText editor with live preview.
 
-.. image:: screenshot.jpg
+.. image:: screenshot.png
 
 .. contents::
 
@@ -72,7 +72,7 @@ Compilation
 Prerequisites
 =============
 
-- QT 5.7 & Qt Creator
+- QT 5.8 & Qt Creator
 - Python 2.7 (32bit or 64bit depending the used compiler)
 - `Pygments <https://pypi.python.org/pypi/Pygments>`_ (tested with 2.1.3)
 - `Docutils <https://sourceforge.net/p/docutils/code/HEAD/tree/trunk/docutils/>`_ (tested with 0.13, revision 7975)
@@ -82,9 +82,9 @@ Build configuration
 ===================
 
 .. NOTE::
-  - OS X notes and examples assume that Python 2.7 has been installed using Homebrew.
   - The paths used below (such as *C:/python*) are just examples. Use actual paths :)
   - Use forward slashes in all paths. Omit trailing slashes.
+  - OS X notes and examples assume that Python 2.7 has been installed using Homebrew. Your paths may vary.
 
 Copy *rstpad.local.pro.dist*, name it *rstpad.local.pro* and set the following variables:
 
