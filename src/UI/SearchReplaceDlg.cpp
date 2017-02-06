@@ -10,7 +10,11 @@ namespace RstPad {
     {
         ui->setupUi(this);
 
-        setWindowFlags((windowFlags() & ~Qt::WindowContextHelpButtonHint) | Qt::MSWindowsFixedSizeDialogHint);
+        setWindowFlags(
+            (windowFlags() & ~Qt::WindowContextHelpButtonHint)
+            | Qt::MSWindowsFixedSizeDialogHint
+            | Qt::WindowStaysOnTopHint
+        );
         setFixedSize(size());
 
         connect(ui->Text, &QLineEdit::returnPressed, this, &SearchReplaceDlg::on_Find_clicked);
