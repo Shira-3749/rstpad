@@ -15,12 +15,17 @@ namespace RstPad {
 
     void EditManipulator::indent()
     {
+        indent(indentSize);
+    }
+
+    void EditManipulator::indent(int numChars)
+    {
         auto cursor = edit->textCursor();
 
         if (cursor.hasSelection()) {
             // indent selection (one or more lines)
             auto blocks = getSelectedBlocks(cursor.selectionStart(), cursor.selectionEnd());
-            auto indentation = QString(" ").repeated(indentSize);
+            auto indentation = QString(" ").repeated(numChars);
 
             cursor.beginEditBlock();
 
@@ -33,13 +38,18 @@ namespace RstPad {
         } else {
             // indent from cursor position
             int pos = cursor.positionInBlock();
-            int numSpaces = qCeil((float) pos / (float) indentSize) * indentSize - pos;
+            int numSpaces = qCeil((float) pos / (float) numChars) * numChars - pos;
 
-            cursor.insertText(QString(" ").repeated(0 == numSpaces ? indentSize : numSpaces));
+            cursor.insertText(QString(" ").repeated(0 == numSpaces ? numChars : numSpaces));
         }
     }
 
     void EditManipulator::unindent()
+    {
+        unindent(indentSize);
+    }
+
+    void EditManipulator::unindent(int numChars)
     {
         auto cursor = edit->textCursor();
 
@@ -51,10 +61,10 @@ namespace RstPad {
 
             for (int i = 0; i < blocks.length(); ++i) {
                 auto text = blocks[i].text();
-                auto numCharsToRemove = indentSize;
+                auto numCharsToRemove = numChars;
 
                 // stop on first non-space character
-                for (int j = 0; j < indentSize; ++j) {
+                for (int j = 0; j < numChars; ++j) {
                     if (text[j] != QLatin1Char(' ')) {
                         numCharsToRemove = j;
                         break;

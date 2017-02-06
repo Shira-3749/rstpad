@@ -44,5 +44,7 @@
         <file>syntax-help/directives.html</file>
         <file>syntax-help/html4css1.css</file>
         <file>icons/qt.png</file>
+        <file>icons/indent.png</file>
+        <file>icons/unindent.png</file>
     </qresource>
 </RCC>

@@ -138,16 +138,19 @@ QWebEngineView, QPlainTextEdit {
    <addaction name="ActionBold"/>
    <addaction name="ActionItalic"/>
    <addaction name="separator"/>
-   <addaction name="ActionInlineCode"/>
-   <addaction name="ActionCodeBlock"/>
-   <addaction name="ActionPygmentsCodeBlock"/>
-   <addaction name="ActionHorizontalRule"/>
-   <addaction name="separator"/>
    <addaction name="ActionUL"/>
    <addaction name="ActionOL"/>
+   <addaction name="ActionHorizontalRule"/>
+   <addaction name="separator"/>
+   <addaction name="ActionUnindent"/>
+   <addaction name="ActionIndent"/>
    <addaction name="separator"/>
    <addaction name="ActionLink"/>
    <addaction name="ActionImage"/>
+   <addaction name="separator"/>
+   <addaction name="ActionInlineCode"/>
+   <addaction name="ActionCodeBlock"/>
+   <addaction name="ActionPygmentsCodeBlock"/>
    <addaction name="separator"/>
    <addaction name="ActionSyntaxHelp"/>
   </widget>
@@ -502,6 +505,30 @@ QWebEngineView, QPlainTextEdit {
    </property>
    <property name="shortcut">
     <string>Ctrl+G</string>
+   </property>
+  </action>
+  <action name="ActionIndent">
+   <property name="icon">
+    <iconset resource="../../resources/resources.qrc">
+     <normaloff>:/icons/indent.png</normaloff>:/icons/indent.png</iconset>
+   </property>
+   <property name="text">
+    <string>Indent</string>
+   </property>
+   <property name="toolTip">
+    <string>Indent (hold shift for 1-char indent)</string>
+   </property>
+  </action>
+  <action name="ActionUnindent">
+   <property name="icon">
+    <iconset resource="../../resources/resources.qrc">
+     <normaloff>:/icons/unindent.png</normaloff>:/icons/unindent.png</iconset>
+   </property>
+   <property name="text">
+    <string>Unindent</string>
+   </property>
+   <property name="toolTip">
+    <string>Unindent (hold shift for 1-char unindent)</string>
    </property>
   </action>
  </widget>

@@ -13,7 +13,9 @@ namespace RstPad {
         public:
             EditManipulator(QPlainTextEdit *edit);
             void indent();
+            void indent(int numChars);
             void unindent();
+            void unindent(int numChars);
             void indentNewLine();
             void jumpToStartOfLine(bool anchored = false);
             void setIndentSize(int size);

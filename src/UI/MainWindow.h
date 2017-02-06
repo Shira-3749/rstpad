@@ -96,6 +96,8 @@ namespace RstPad {
             void on_ActionFindNext_triggered();
             void on_ActionFindPrev_triggered();
             void on_ActionGotoLine_triggered();
+            void on_ActionIndent_triggered();
+            void on_ActionUnindent_triggered();
     };
 
 }

@@ -5,6 +5,7 @@
 #include "WebPage.h"
 #include "SettingsDlg.h"
 #include "PygmentLexersDlg.h"
+#include <Qt>
 #include <QTextOption>
 #include <QFontDatabase>
 #include <QMessageBox>
@@ -527,5 +528,23 @@ void RstPad::MainWindow::on_ActionGotoLine_triggered()
         } else {
             APP->beep();
         }
+    }
+}
+
+void RstPad::MainWindow::on_ActionIndent_triggered()
+{
+    if (APP->keyboardModifiers() & Qt::ShiftModifier) {
+        ui->CodeEditor->manipulator()->indent(1);
+    } else {
+        ui->CodeEditor->manipulator()->indent();
+    }
+}
+
+void RstPad::MainWindow::on_ActionUnindent_triggered()
+{
+    if (APP->keyboardModifiers() & Qt::ShiftModifier) {
+        ui->CodeEditor->manipulator()->unindent(1);
+    } else {
+        ui->CodeEditor->manipulator()->unindent();
     }
 }
