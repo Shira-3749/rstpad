@@ -73,7 +73,7 @@ Prerequisites
 =============
 
 - QT 5.8 & Qt Creator
-- Python 2.7 (32bit or 64bit depending the used compiler)
+- Python 2.7 (32bit or 64bit depending on the used compiler)
 - `Pygments <https://pypi.python.org/pypi/Pygments>`_ (tested with 2.1.3)
 - `Docutils <https://sourceforge.net/p/docutils/code/HEAD/tree/trunk/docutils/>`_ (tested with 0.13, revision 7975)
 
