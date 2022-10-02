@@ -12,10 +12,8 @@ namespace RstPad {
 
         setWindowFlags(
             (windowFlags() & ~Qt::WindowContextHelpButtonHint)
-            | Qt::MSWindowsFixedSizeDialogHint
             | Qt::WindowStaysOnTopHint
         );
-        setFixedSize(size());
 
         connect(ui->Text, &QLineEdit::returnPressed, this, &SearchReplaceDlg::on_Find_clicked);
         connect(ui->Replacement, &QLineEdit::returnPressed, this, &SearchReplaceDlg::on_Replace_clicked);
