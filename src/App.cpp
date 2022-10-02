@@ -55,6 +55,9 @@ namespace RstPad {
         SPLASH_MSG("Instantiating components")
 
         QStringList pythonLibs;
+        pythonLibs.append("/usr/lib/python2.7");
+        pythonLibs.append("/usr/lib/python2.7/lib-dynload");
+        pythonLibs.append("/usr/lib/python2.7/site-packages");
         pythonLibs.append(applicationDirPath().append("/libs"));
         pythonLibs.append(applicationDirPath().append("/libs/libs.zip"));
 
