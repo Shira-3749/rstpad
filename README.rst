@@ -72,7 +72,7 @@ Compilation
 Prerequisites
 =============
 
-- QT 5.8 & Qt Creator
+- Qt 5.8+
 - Python 2.7 (32bit or 64bit depending on the used compiler)
 - `Pygments <https://pypi.python.org/pypi/Pygments>`_ (tested with 2.1.3)
 - `Docutils <https://sourceforge.net/p/docutils/code/HEAD/tree/trunk/docutils/>`_ (tested with 0.13, revision 7975)
@@ -92,7 +92,7 @@ Copy *rstpad.local.pro.dist*, name it *rstpad.local.pro* and set the following v
 
   - Python linker flags
   - Windows: ``-LC:/python/libs -lpython27``
-  - OS X: use the `python-config <http://manpages.ubuntu.com/manpages/precise/man1/python-config.1.html>`_ utility to determine linker flags:
+  - Linux and OS X: use the `python-config <http://manpages.ubuntu.com/manpages/precise/man1/python-config.1.html>`_ utility to determine linker flags:
 
     - ``python2.7-config --ldflags``
 
@@ -101,9 +101,9 @@ Copy *rstpad.local.pro.dist*, name it *rstpad.local.pro* and set the following v
   - path to a directory containing Python's header files
 
     - Windows: ``C:/python/include``
-    - OS X: ``/usr/include/python2.7``
+    - Linux and OS X: ``/usr/include/python2.7``
 
-- ``PYTHON_SYS_PATH``
+- ``PYTHON_SYS_PATH`` (for deployment)
 
   - path to a directory containing:
 

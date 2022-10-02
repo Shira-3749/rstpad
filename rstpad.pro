@@ -97,5 +97,5 @@ win32|win64 {
 
     QMAKE_BUNDLE_DATA += deploy_python_libs
 } else {
-    warning("Not deplying Python libraries - platform not supported")
+    warning("Not deploying Python libraries - platform not supported")
 }
