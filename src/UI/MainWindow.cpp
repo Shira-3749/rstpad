@@ -312,7 +312,7 @@ void RstPad::MainWindow::on_ActionAbout_triggered()
     auto text = R"about(RSTPad v%1
 (built %2 %3)
 
-Author: ShiraNai7 (shira.cz)
+Author: Shira (shira.cz)
 License: MIT
 
 Credits:
