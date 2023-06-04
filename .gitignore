@@ -1,2 +1,9 @@
 /rstpad.local.pro
 /rstpad.pro.user
+*.o
+moc_*
+qrc_*
+ui_*
+.qmake.stash
+Makefile
+app/

@@ -15,8 +15,7 @@ namespace RstPad {
     {
         ui->setupUi(this);
 
-        setWindowFlags((windowFlags() & ~Qt::WindowContextHelpButtonHint) | Qt::MSWindowsFixedSizeDialogHint);
-        setFixedSize(size());
+        setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 
         ui->Orientation->addItem(tr("Horizontal"), static_cast<int>(EditorOrientation::Horizontal));
         ui->Orientation->addItem(tr("Vertical"), static_cast<int>(EditorOrientation::Vertical));
